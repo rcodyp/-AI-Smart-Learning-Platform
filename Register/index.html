@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Register Page</title>
+</head>
+
+<body>
+    <div class="container">
+        <form class="register-form">
+            <h1>Register</h1>
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div>
+                <label for="email">Email ID:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div>
+                <label for="confirm-password">Confirm Password:</label>
+                <input type="password" id="confirm-password" name="confirm-password" required>
+            </div>
+            <h4 id="error-message"></h4>
+            <button type="submit">Register</button>
+        </form>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const form = document.querySelector('.register-form');
+                const passwordInput = document.getElementById('password');
+                const confirmPasswordInput = document.getElementById('confirm-password');
+                const errorMessage = document.getElementById("error-message");
+
+                form.addEventListener('submit', (event) => {
+                    if (passwordInput.value !== confirmPasswordInput.value) {
+                        event.preventDefault();
+                        errorMessage.innerText = "Passwords don't match"; // Display error message
+                        errorMessage.style.color = "red"; // Set error message color
+                        confirmPasswordInput.focus();
+                    } else {
+                        errorMessage.innerText = ""; // Clear error message if passwords match
+                    }
+                });
+            });
+
+        </script>
+    </div>
+</body>
+
+</html>
