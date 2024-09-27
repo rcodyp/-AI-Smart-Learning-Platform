@@ -7,10 +7,11 @@ const Page1 = () => {
     return (
         <div id="page1">
             <div id="nav">
-                <div>Logo</div>
+                <div class="nav-con">
+                </div>
                 <div>
-                    <div>Login</div>
-                    <div>Register</div>
+                    <a href="/">Home</a>
+                    <a href="/about">About</a>
                 </div>
             </div>
             <div id="content">
