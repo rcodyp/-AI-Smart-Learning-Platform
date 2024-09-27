@@ -1,0 +1,125 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #181818;
+    color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    background-image: url("https://www.epo.org/sites/default/files/styles/ratio_16_9/public/2023-05/AdobeStock_266056885_new_1920x1080.jpg?itok=o1GLBuEj");
+    background-size: cover;
+    background-repeat: no-repeat; 
+    background-position: center; /
+}
+
+#nav {
+    font-family: monument, sans-serif;
+    letter-spacing: 2px;
+    background-color: #181818; 
+    height: 10vh;
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    padding: 0 2vw; 
+}
+
+#nav div {
+    padding: 1.5vw;
+    text-transform: uppercase; 
+    font-size: 1.2vw;
+    position: relative;
+}
+
+.nav-con {
+    background-image: url(logo-removebg-preview.png);
+    background-size: cover; 
+    background-position: center;
+    padding: 1.5vw;
+    height: 3.5vw;
+    width: 4vw;
+}
+
+#nav div:last-child {
+    display: flex;
+    gap: 4vw; 
+}
+
+#nav a {
+    text-transform: uppercase; 
+    font-size: 1.2vw; 
+    color: white; 
+    text-decoration: none; 
+    padding: 10px 15px;
+    transition: color 0.3s, background-color 0.3s; 
+}
+
+#nav a:hover {
+    color: #f0f0f0; 
+    background-color: rgba(255, 255, 255, 0.1); 
+}
+
+
+.container {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 20px;
+}
+
+.about {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    background-color: #222;
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.7);
+}
+
+.text-content {
+    flex: 1;
+    margin-right: 60px;
+}
+
+.about h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.about p {
+    color: #bbb;
+    line-height: 1.9;
+    margin-bottom: 25px;
+}
+
+.about h2 {
+    margin-top: 30px;
+    font-size: 2em;
+    border-bottom: 2px solid #444;
+    padding-bottom: 8px;
+}
+
+.about h2, h1 {
+    color: rgb(4, 207, 207);
+}
+
+.about ul {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-bottom: 25px;
+}
+
+.about ul li {
+    margin-bottom: 15px; 
+}
+
+.image-container {
+    flex: 0 0 40%;
+    text-align: center;
+}
+
+.image-container img {
+    max-width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
