@@ -4,6 +4,10 @@ import React from 'react';
 import '../style.css'; // Ensure the CSS file path is correct
 
 const Page3 = () => {
+    const handleButtonClick = () => {
+        window.open('http://localhost:8501', '_blank'); // Open in a new tab
+      };
+  
     return (
         <div id="page3">
             <div id="circle">
@@ -17,11 +21,13 @@ const Page3 = () => {
                         alt="Web Development"
                     />
                     <div>
-                        <div className="title">Web Development</div>
+                        <a href="http://localhost:8501"><div className="title">Web Development</div></a>
                         <div className="about">
                             Web development involves building websites and web applications using technologies like HTML, CSS, and JavaScript. It includes both front-end (design and user interaction) and back-end (server and database) development.
                         </div>
+                    
                     </div>
+                    
                 </div>
                 <div id="part2">
                     <img
@@ -30,12 +36,14 @@ const Page3 = () => {
                         alt="Cyber Security"
                     />
                     <div>
-                        <div className="title">Cyber Security</div>
+                    <a href="http://localhost:8501"><div className="title">Cyber Security</div></a>
                         <div className="about">
                             Cybersecurity protects systems, networks, and data from digital threats. It ensures the security and privacy of information through tools like encryption and firewalls.
                         </div>
                     </div>
+                    
                 </div>
+                
             </div>
         </div>
     );

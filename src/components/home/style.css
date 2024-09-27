@@ -319,3 +319,14 @@ video {
   font-size: 2rem; /* Adjust the size as needed */
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Optional: Shadow for better readability */
 }
+
+
+button {
+  padding: 10px 20px;
+  background-color: rgb(51, 246, 2); /* You can choose a different color */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  position: absolute;
+  left: 50%;
+}
