@@ -23,8 +23,9 @@ html, body {
   height: 100%;
   background-color: black;
   position: relative;
+  margin-bottom: 5vw;
 }
-
+/* 
 #nav {
   font-family: monument;
   letter-spacing: 2px;
@@ -45,6 +46,53 @@ html, body {
 #nav div:last-child {
   display: flex;
   gap: 4vw;
+} */
+
+#nav {
+  font-family: monument, sans-serif;
+  letter-spacing: 2px;
+  background-color: #181818; 
+  height: 10vh;
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center;
+  padding: 0 2vw; 
+}
+
+#nav div {
+  padding: 1.5vw;
+  text-transform: uppercase; 
+  font-size: 1.2vw;
+  position: relative;
+}
+
+.nav-con {
+  background-image: url(/public/favImg.png);
+  background-size: cover; 
+  background-position: center;
+  padding: 1.5vw;
+  height: 5.5vw;
+  width: 9vw;
+  margin-left: 50px;
+}
+
+#nav div:last-child {
+  display: flex;
+  gap: 4vw; 
+}
+
+#nav a {
+  text-transform: uppercase; 
+  font-size: 1.2vw; 
+  color: white; 
+  text-decoration: none; 
+  padding: 10px 15px;
+  transition: color 0.3s, background-color 0.3s; 
+}
+
+#nav a:hover {
+  color: #f0f0f0; 
+  background-color: rgba(255, 255, 255, 0.1); 
 }
 
 .tag-text{
@@ -115,7 +163,7 @@ html, body {
 
 #page2{
   width: 100%;
-  height: 100vh;
+  height: 130vh;
   position: relative;
 }
 
@@ -125,7 +173,8 @@ video {
   left: 0;
   height: 100%;
   width: 100%;
-  object-fit:cover;  
+  object-fit:cover; 
+  object-position: 50% 40% ; 
   filter: brightness(70%);  
   z-index: -1;
 }
@@ -309,16 +358,39 @@ video {
   object-fit: cover; /* Cover the area without distortion */
 }
 
-#center {
+/* #center {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); /* Center the text */
-  color: white; /* Text color */
+  transform: translate(-50%, -50%); 
+  color: white; 
   text-align: center;
-  font-size: 2rem; /* Adjust the size as needed */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Optional: Shadow for better readability */
+  font-size: 2rem; 
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
+} */
+
+#center {
+  position: absolute;
+  top: 50%;
+  left: -100%; /* Start off-screen to the left */
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  font-size: 2rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  animation: slide-in 3s ease-in-out forwards; /* Trigger animation */
 }
+
+/* Keyframes to define the sliding from left */
+@keyframes slide-in {
+  0% {
+    left: -100%; /* Off the screen */
+  }
+  100% {
+    left: 50%; /* Final position */
+  }
+}
+
 
 
 button {
@@ -329,4 +401,8 @@ button {
   cursor: pointer;
   position: absolute;
   left: 50%;
+}
+
+#joinDiv{
+  text-align: left;
 }

@@ -12,7 +12,7 @@ const Page2 = () => {
             </video>
 
             <div id="center">
-                <div>Join Us</div>
+                <div id='joinDiv'>Join Us</div>
                 <div>Revolutionize</div>
                 <div>Education</div>
                 <div>With AI</div>
