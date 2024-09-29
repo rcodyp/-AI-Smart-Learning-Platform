@@ -25,33 +25,11 @@ html, body {
   position: relative;
   margin-bottom: 5vw;
 }
-/* 
-#nav {
-  font-family: monument;
-  letter-spacing: 2px;
-  height: 8vh;
-  padding: 1.5vw;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-#nav div {
-  text-transform: uppercase;
-  font-size: 1.2vw;
-  position: relative; 
-  padding-bottom: 2px;
-}
-
-#nav div:last-child {
-  display: flex;
-  gap: 4vw;
-} */
 
 #nav {
   font-family: monument, sans-serif;
   letter-spacing: 2px;
-  background-color: #181818; 
+  background-color: #18181817; 
   height: 10vh;
   display: flex; 
   justify-content: space-between; 
@@ -112,14 +90,13 @@ html, body {
   position: relative;
 }
 
-#content img {
+#spline {
   height: 100%;
   width: 100%;
-  object-fit: cover;
-  filter: brightness(30%);
+  filter: brightness(130%);
 }
+
 #overlay {
-  border-top: 1px solid white;
   bottom: 0%;
   width: 100%;
   position: absolute;
@@ -128,44 +105,59 @@ html, body {
 
 #over1 h1 {
   font-family: monument;
+  color: #dbdbdb;
   font-size: 3.6vw;
   font-weight: 500;
   margin-bottom: 2vh;
-  transition: transform 0.3s ease, color 0.3s ease; /* Add transition */
+  transition: transform 0.3s ease, color 0.3s ease; 
 }
 
 #over1 div:nth-last-child(1) {
   font-size: 1vw;
   padding: 2vw 2.4vw;
-  /* border: 1px solid rgb(61, 241, 220); */
-  /* border-radius: 50%; */
-  transition: background-color 0.3s ease, transform 0.3s ease; /* Add transition */
+  transition: background-color 0.3s ease, transform 0.3s ease; 
 }
 
-#over1,
-#over2 {
+#over1 {
   display: flex;
   align-items: center;
   justify-content: space-between;
   color: #fff;
 }
 
-#over2 {
-  border-top: 2px solid white;
-  padding: 1.5vw 0;
-}
-
-#over2 div {
-  font-weight: 500;
-  font-size: 1.5vw;
-}
-
-
-#page2{
-  width: 100%;
-  height: 130vh;
+/* page 2 css */
+#page2 {
   position: relative;
+  width: 100%;
+  height: 120vh; 
+  overflow: hidden;
 }
+
+#center {
+  text-transform: uppercase;
+  height: 52%;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: -100%; 
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+  font-size: 2rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  animation: slide-in 3s ease-in-out forwards; 
+}
+
+/* Keyframes to define the sliding from left */
+@keyframes slide-in {
+  0% {
+    left: -100%; /* Off the screen */
+  }
+  100% {
+    left: 50%; /* Final position */
+  }
+}
+
 
 video {
   position: absolute;
@@ -173,20 +165,12 @@ video {
   left: 0;
   height: 100%;
   width: 100%;
-  object-fit:cover; 
+  object-fit: cover; 
   object-position: 50% 40% ; 
   filter: brightness(70%);  
   z-index: -1;
 }
 
-#center {
-  height: 52%;
-  width: 100%;
-  top: 20%;
-  position: absolute;
-  text-transform: uppercase;
-  z-index: 1;
-}
 
 #center div {
   font-size: 9vw;
@@ -344,54 +328,6 @@ video {
 }
 
 
-/* page 2 css */
-#page2 {
-  position: relative;
-  width: 100%;
-  height: 100vh; /* Full viewport height */
-  overflow: hidden;
-}
-
-video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Cover the area without distortion */
-}
-
-/* #center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); 
-  color: white; 
-  text-align: center;
-  font-size: 2rem; 
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); 
-} */
-
-#center {
-  position: absolute;
-  top: 50%;
-  left: -100%; /* Start off-screen to the left */
-  transform: translate(-50%, -50%);
-  color: white;
-  text-align: center;
-  font-size: 2rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-  animation: slide-in 3s ease-in-out forwards; /* Trigger animation */
-}
-
-/* Keyframes to define the sliding from left */
-@keyframes slide-in {
-  0% {
-    left: -100%; /* Off the screen */
-  }
-  100% {
-    left: 50%; /* Final position */
-  }
-}
-
-
 
 button {
   padding: 10px 20px;
@@ -406,3 +342,85 @@ button {
 #joinDiv{
   text-align: left;
 }
+#page5 {
+  width: 100%;
+  height: auto; 
+  color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  position: relative;
+  overflow: hidden; 
+}
+
+.container1 {
+  max-width: 100%;
+  margin: 1vw 0;
+  padding: 1vw;
+  position: relative; /* Establish positioning for child elements */
+}
+
+.image-container {
+  position: absolute; /* Position the Spline item absolutely */
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Center the Spline item */
+  z-index: 1; 
+  width: 100%; /* Ensure responsiveness */
+  height: 100%; /* Limit height for balance */
+}
+
+.about2 {
+  display: flex;
+  flex-direction: column; 
+  align-items: flex-start;
+  padding: 50px;
+  border-radius: 15px;
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.7);
+  position: relative; 
+  z-index: 2;
+}
+
+.text-content {
+  flex: 1;
+}
+
+.about2 h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+  text-align: center; /* Center align the heading */
+  font-family: monument;
+  letter-spacing: 0.2vw;
+}
+
+.about2 p {
+  color: #bbb;
+  line-height: 1.9;
+  margin-bottom: 25px;
+}
+
+.about2 h2 {
+  margin-top: 30px;
+  font-size: 2em;
+  border-bottom: 2px solid #444;
+  padding-bottom: 8px;
+  font-family: monument;
+}
+
+.about2 h2,
+.about2 h1 {
+  color: rgb(4, 207, 207);
+}
+
+.about2 ul {
+  display: flex;
+  flex-direction: column; /* Stack list items vertically */
+  list-style-type: disc;
+  padding-left: 20px;
+  margin-bottom: 25px;
+}
+
+.about2 ul li {
+  margin-bottom: 15px; 
+}
+

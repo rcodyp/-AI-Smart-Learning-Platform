@@ -1,18 +1,10 @@
 import React from 'react';
-import '../style.css'; // Import your CSS file
+import '../style.css';
+import Spline from '@splinetool/react-spline';
 
 const Page1 = () => {
     return (
         <div id="page1">
-            {/* <div id="nav">
-                <div>
-                    <img src="/favImg.png" alt="" />
-                </div>
-                <div>
-                    <a href="/">Home</a>
-                    <a href="/about">About</a>
-                </div>
-            </div> */}
             <div id="nav">
         <div class="nav-con">
         </div>
@@ -22,7 +14,9 @@ const Page1 = () => {
         </div>
     </div>
             <div id="content">
-                <img src='/land.jpeg' alt="" />
+            <Spline id='spline'
+       scene="https://prod.spline.design/Mj8qcXA5N6AImdZ9/scene.splinecode" 
+       />
                 <div id="overlay">
                     <div id="over1">
                         <div>

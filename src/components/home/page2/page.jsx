@@ -2,7 +2,6 @@ import React from 'react';
 import '../style.css'; // Optional: Create a CSS file for styling
 
 
-
 const Page2 = () => {
   return (
     <div id='page2'>

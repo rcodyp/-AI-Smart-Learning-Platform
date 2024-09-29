@@ -1,49 +1,50 @@
-
 #bottom {
-    width: 100%;
-    background-color: antiquewhite;
-  }
-  
-  #footer {
-    background-color: #333; 
-    color: #fff; 
-    padding: 20px 40px; 
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
-    flex-wrap: wrap; 
-  }
-  
-  .logo {
-    font-size: 24px; 
-    font-weight: bold; 
-  }
-  
-  .las {
-    display: flex; 
-    flex-direction: column; 
-    align-items: flex-end; 
-  }
-  
-  .las div {
-    margin-bottom: 10px; 
-  }
-  
-  .icons {
-    display: flex; 
-    justify-content: flex-end; 
-  }
-  
-  .icons i {
-    font-size: 20px; 
-    margin-left: 15px; 
-    cursor: pointer; 
-    transition: color 0.3s ease; 
-  }
-  
-  .icons i:hover {
-    color: #f39c12; 
-  }
-  
-  
-  
+  width: 100%;
+  background-color: #333; /* Dark background for the footer */
+}
+
+#footer {
+  color: #fff; 
+  padding: 15px 30px; /* Adjusted padding for a tighter look */
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  flex-wrap: wrap; 
+}
+
+.logo {
+  font-size: 24px; 
+  font-weight: bold; 
+  color: #4ecdc4; /* Bright color for logo */
+}
+
+.las {
+  display: flex; 
+  flex-direction: column; 
+  align-items: flex-end; 
+}
+
+.las div {
+  margin-bottom: 5px; /* Reduced margin for a compact layout */
+}
+
+.links {
+  display: flex; /* Use flex for the link container */
+  gap: 10px; /* Space between links */
+}
+
+.footer-link {
+  color: #fff; /* White color for links */
+  text-decoration: none; /* Remove underline */
+  transition: color 0.3s; /* Smooth color transition */
+}
+
+.footer-link:hover {
+  color: #4ecdc4; /* Change color on hover */
+}
+
+.footer-bottom {
+  margin-top: 10px; /* Space above copyright text */
+  font-size: 0.8em; /* Smaller font size for copyright */
+  text-align: center; /* Center align copyright */
+}
