@@ -1,8 +1,10 @@
 import React from 'react';
 import '../style.css'; // Optional: Create a CSS file for styling
-
-
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+gsap.registerPlugin(ScrollTrigger);
 const Page2 = () => {
+
   return (
     <div id='page2'>
       <video autoPlay muted loop>
