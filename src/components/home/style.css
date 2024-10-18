@@ -4,11 +4,16 @@
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   color: white;
   height: 100%;
   width: 100%;
   background-color: black;
+}
+
+html::-webkit-scrollbar {
+  display: none;
 }
 
 #main {
@@ -17,8 +22,18 @@ html, body {
   position: relative;
   font-family: sans-serif;
 }
+.mouse-follower {
+  width: 1vw;
+  height: 1vw;
+  mix-blend-mode: difference;
+  background-color: #fff;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+}
 
-#page1{
+#page1 {
   width: 100%;
   height: 100%;
   background-color: black;
@@ -26,74 +41,23 @@ html, body {
   margin-bottom: 5vw;
 }
 
-#nav {
-  font-family: monument, sans-serif;
-  letter-spacing: 2px;
-  background-color: #18181817; 
-  height: 10vh;
-  display: flex; 
-  justify-content: space-between; 
-  align-items: center;
-  padding: 0 2vw; 
+#content img {
+  height: 95%;
+  width: 100%;
+  object-fit: cover;
+  filter: brightness(70%);
 }
 
-#nav div {
-  padding: 1.5vw;
-  text-transform: uppercase; 
-  font-size: 1.2vw;
-  position: relative;
-}
-
-.nav-con {
-  background-image: url(/public/favImg.png);
-  background-size: cover; 
-  background-position: center;
-  padding: 1.5vw;
-  height: 5.5vw;
-  width: 9vw;
-  margin-left: 50px;
-}
-
-#nav div:last-child {
-  display: flex;
-  gap: 4vw; 
-}
-
-#nav a {
-  text-transform: uppercase; 
-  font-size: 1.2vw; 
-  color: white; 
-  text-decoration: none; 
-  padding: 10px 15px;
-  transition: color 0.3s, background-color 0.3s; 
-}
-
-#nav a:hover {
-  color: #f0f0f0; 
-  background-color: rgba(255, 255, 255, 0.1); 
-}
-
-.tag-text{
-  position: absolute;
-  bottom: 0;
-  font-size: 3vw;
-  padding: 2vw 3vw;
-}
-
-.tag-2{
-  text-align: end;
-}
 
 #content {
   height: 90vh;
   width: 100%;
   position: relative;
-}
-
-#spline {
-  height: 100%;
-  width: 100%;
-  filter: brightness(130%);
+  background-image: url(/public/land.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.7;
 }
 
 #overlay {
@@ -109,13 +73,21 @@ html, body {
   font-size: 3.6vw;
   font-weight: 500;
   margin-bottom: 2vh;
-  transition: transform 0.3s ease, color 0.3s ease; 
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+#over1 h2 {
+  font-family: monument;
+  color: #dbdbdb;
+  font-size: 3vw;
+  font-weight: 500;
+  margin-bottom: 2vh;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
 #over1 div:nth-last-child(1) {
   font-size: 1vw;
   padding: 2vw 2.4vw;
-  transition: background-color 0.3s ease, transform 0.3s ease; 
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 #over1 {
@@ -129,7 +101,7 @@ html, body {
 #page2 {
   position: relative;
   width: 100%;
-  height: 120vh; 
+  height: 120vh;
   overflow: hidden;
 }
 
@@ -139,23 +111,13 @@ html, body {
   width: 100%;
   position: absolute;
   top: 50%;
-  left: -100%; 
+  left: 50%;
   transform: translate(-50%, -50%);
   color: white;
   text-align: center;
   font-size: 2rem;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-  animation: slide-in 3s ease-in-out forwards; 
-}
-
-/* Keyframes to define the sliding from left */
-@keyframes slide-in {
-  0% {
-    left: -100%; /* Off the screen */
-  }
-  100% {
-    left: 50%; /* Final position */
-  }
+  animation: slide-in 3s ease-in-out forwards;
 }
 
 
@@ -165,32 +127,51 @@ video {
   left: 0;
   height: 100%;
   width: 100%;
-  object-fit: cover; 
-  object-position: 50% 40% ; 
-  filter: brightness(70%);  
+  object-fit: cover;
+  object-position: 50% 40%;
+  filter: brightness(70%);
   z-index: -1;
 }
-
 
 #center div {
   font-size: 9vw;
   line-height: 7.5vw;
   width: 80%;
-  margin: 0 auto; 
+  margin: 0 auto;
 }
 
 #center div:nth-child(2),
-#center div:nth-child(3){
+#center div:nth-child(3) {
   text-align: center;
 }
 
-#center div:nth-child(4){
+#center div:nth-child(4) {
   text-align: end;
   padding-right: 6vw;
 }
+#page3{
+  margin-top: 3vw;
+  width: 100%;
+  height: 100%;
+}
 
-
-#page3 ,#page4{
+#page3-title{
+  width: 70%;
+  position: relative;
+  left: 30%;
+  padding: 0vw 2vw;
+}
+#page3-title>.underline{
+  margin-bottom: 0.9vw;
+}
+#page3-title h2{
+  text-transform: uppercase;
+  font-size: 5vw;
+  font-family: monument;
+  font-weight: 500;
+}
+#page3-container,
+#page4 {
   width: 100%;
   height: 100%;
   background-color: black;
@@ -198,20 +179,6 @@ video {
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
-
-}
-
-#circle {
-  width: 0px;
-  height: 0px;
-  background-color: #ffffff;
-  border-radius: 50%;
-  position: absolute;
-  z-index: -1;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   overflow: hidden;
 }
 
@@ -224,7 +191,8 @@ video {
   align-items: center;
 }
 
-#part1 ,#part4 {
+#part1,
+#part4 {
   width: 55%;
   height: 100%;
   position: relative;
@@ -236,7 +204,8 @@ video {
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
-#part2, #part3 {
+#part2,
+#part3 {
   width: 35%;
   height: 100%;
   position: relative;
@@ -248,7 +217,10 @@ video {
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
-#part1:hover ,#part2:hover,#part3:hover,#part4:hover {
+#part1:hover,
+#part2:hover,
+#part3:hover,
+#part4:hover {
   transform: scale(1.05);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.233);
 }
@@ -280,147 +252,60 @@ video {
   transition: transform 0.3s;
 }
 
-
-#bottom {
-  width: 100%;
-  background-color: antiquewhite;
-}
-
-#footer {
-  background-color: #333; 
-  color: #fff; 
-  padding: 20px 40px; 
-  display: flex; 
-  justify-content: space-between; 
-  align-items: center; 
-  flex-wrap: wrap; 
-}
-
-.logo {
-  font-size: 24px; 
-  font-weight: bold; 
-}
-
-.las {
-  display: flex; 
-  flex-direction: column; 
-  align-items: flex-end; 
-}
-
-.las div {
-  margin-bottom: 10px; 
-}
-
-.icons {
-  display: flex; 
-  justify-content: flex-end; 
-}
-
-.icons i {
-  font-size: 20px; 
-  margin-left: 15px; 
-  cursor: pointer; 
-  transition: color 0.3s ease; 
-}
-
-.icons i:hover {
-  color: #f39c12; 
-}
-
-
-
-button {
-  padding: 10px 20px;
-  background-color: rgb(51, 246, 2); /* You can choose a different color */
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  position: absolute;
-  left: 50%;
-}
-
-#joinDiv{
-  text-align: left;
-}
 #page5 {
   width: 100%;
-  height: auto; 
-  color: #f0f0f0;
-  margin: 0;
-  padding: 0;
-  background-color: black;
+  height: 130vh;
+  padding: 2vw;
   position: relative;
-  overflow: hidden; 
 }
 
-.container1 {
-  max-width: 100%;
-  margin: 1vw 0;
-  padding: 1vw;
-  position: relative; /* Establish positioning for child elements */
+#about-section {
+  position: absolute;
+  width: 70%;
+  left: 30%;
+  padding: 2vw;
 }
 
-.image-container {
-  position: absolute; /* Position the Spline item absolutely */
-  top: 50%; /* Center vertically */
-  left: 50%; /* Center horizontally */
-  transform: translate(-50%, -50%); /* Center the Spline item */
-  z-index: 1; 
-  width: 100%; /* Ensure responsiveness */
-  height: 100%; /* Limit height for balance */
+#about-section h1 {
+  font-size: 5vw;
+}
+.underline {
+  height: 0.2vw;
+  background-color: #fff;
+  margin-top: 2vw;
+  margin-bottom: 2vw;
 }
 
-.about2 {
+#about-discription p {
+  width: 70%;
+  font-size: 1.3vw;
+}
+
+#about-image {
+  height: 50vh;
+  width: 50%;
+  position: relative;
+  margin-top: 2vw;
+}
+
+#about-image img {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+#img-text {
   display: flex;
-  flex-direction: column; 
-  align-items: flex-start;
-  padding: 50px;
-  border-radius: 15px;
-  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.7);
-  position: relative; 
-  z-index: 2;
+}
+#img-text p {
+  width: 20%;
+  margin-top: 5vw;
+  font-size: 1vw;
 }
 
-.text-content {
-  flex: 1;
+#about-benifits {
+  margin-top: 2vw;
 }
-
-.about2 h1 {
-  font-size: 3em;
-  margin-bottom: 20px;
-  text-align: center; /* Center align the heading */
-  font-family: monument;
-  letter-spacing: 0.2vw;
+#about-benifits h2 {
+  margin-bottom: 1vw;
 }
-
-.about2 p {
-  color: #bbb;
-  line-height: 1.9;
-  margin-bottom: 25px;
-}
-
-.about2 h2 {
-  margin-top: 30px;
-  font-size: 2em;
-  border-bottom: 2px solid #444;
-  padding-bottom: 8px;
-  font-family: monument;
-}
-
-.about2 h2,
-.about2 h1 {
-  color: rgb(4, 207, 207);
-}
-
-.about2 ul {
-  display: flex;
-  flex-direction: column; /* Stack list items vertically */
-  list-style-type: disc;
-  padding-left: 20px;
-  margin-bottom: 25px;
-}
-
-.about2 ul li {
-  margin-bottom: 15px; 
-}
-

@@ -1,44 +1,77 @@
 import React from "react";
-import "../style.css"; // Ensure your styles are included
-import Spline from '@splinetool/react-spline';
-
+import "../style.css"; 
+import { motion } from "framer-motion";
 
 const Page5 = () => {
-  const handleButtonClick = () => {
-    window.open("http://localhost:8501", "_blank"); // Open in a new tab
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2, 
+      },
+    },
+  };
+
+  const childVariants = {
+    hidden: { opacity: 0, y: 20 }, 
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeInOut" } }, 
   };
 
   return (
-    <div id="page5">
-    <div class="container1">
-      <div class="image-container">
-        <Spline 
-          id="spline2"
-          scene="https://prod.spline.design/KPfNCE48Kn3YGLed/scene.splinecode" 
-        />
-      </div>
-      <section class="about2">
-        <div class="text-content">
-          <h1>About Our Learning Platform</h1>
+    <motion.div
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      variants={containerVariants} 
+      id="page5"
+    >
+      <div id="about-section">
+        <motion.h1 variants={childVariants}>About Our Platform</motion.h1>
+        <motion.div className="underline" variants={childVariants}></motion.div>
+        <motion.div id="about-discription" variants={childVariants}>
           <p>
-            At LearnAI, our mission is to empower students of all levels to achieve their educational goals through personalized learning experiences. We harness the power of AI to create a dynamic testing environment that adapts to individual skill levels, ensuring that every user receives the support they need.
+            At LearnAI, our mission is to empower students of all levels to
+            achieve their educational goals through personalized learning
+            experiences. We harness the power of AI to create a dynamic testing
+            environment that adapts to individual skill levels, ensuring that
+            every user receives the support they need.
           </p>
-          <h2>Our Process</h2>
+        </motion.div>
+        <motion.div id="img-text" variants={childVariants}>
+          <div id="about-image">
+            <img src="./public/Space.png" alt="" />
+          </div>
           <p>
-            Our platform utilizes AI-driven assessments categorized into three difficulty levels: easy, medium, and hard. As users complete these tests, our intelligent system evaluates their performance and assigns a skill level— beginner, intermediate, or advanced. Based on these evaluations, we curate personalized learning paths tailored to each student’s unique needs and learning style.
+            Our platform offers AI assessments in easy, medium, and hard levels.
+            Users are evaluated and assigned skill levels—beginner,
+            intermediate, or advanced—allowing us to create personalized
+            learning paths for each student.
           </p>
+        </motion.div>
+        <motion.div id="about-benifits" variants={childVariants}>
           <h2>User Benefits</h2>
           <ul>
-            <li>Customized Learning Paths: Tailored educational content designed specifically for you.</li>
-            <li>Flexible Learning: Access materials anytime, anywhere to fit your schedule.</li>
-            <li>Progress Tracking: Monitor your improvement with detailed performance analytics.</li>
-            <li>Engaging Content: Interactive lessons and resources that make learning enjoyable.</li>
+            <motion.li variants={childVariants}>
+              Customized Learning Paths: Tailored educational content designed
+              specifically for you.
+            </motion.li>
+            <motion.li variants={childVariants}>
+              Flexible Learning: Access materials anytime, anywhere to fit your
+              schedule.
+            </motion.li>
+            <motion.li variants={childVariants}>
+              Progress Tracking: Monitor your improvement with detailed
+              performance analytics.
+            </motion.li>
+            <motion.li variants={childVariants}>
+              Engaging Content: Interactive lessons and resources that make
+              learning enjoyable.
+            </motion.li>
           </ul>
-        </div>
-      </section>
-    </div>
-  </div>
-  
+        </motion.div>
+      </div>
+    </motion.div>
   );
 };
 
