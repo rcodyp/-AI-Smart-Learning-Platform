@@ -1,26 +1,41 @@
 import React from 'react';
-import './footer.css'; // Ensure your styles are included
+import { motion } from 'framer-motion';
+import './footer.css'; 
 
 const Footer = () => {
+ 
+  const footerVariants = {
+    hidden: { opacity: 0, y: 20 }, 
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.5, ease: 'easeInOut' } 
+    },
+  };
+
   return (
     <div id="bottom">
-    <footer id="footer">
-      <div class="footer-container">
-        <div class="logo">LearnAI</div>
-        <div class="las">
-          <div class="links">
-            <a href="#" class="footer-link">Contact</a>
-            <a href="#" class="footer-link">Blog</a>
-            <a href="#" class="footer-link">Information</a>
+      <motion.footer 
+        id="footer"
+        initial="hidden" 
+        animate="visible" 
+        variants={footerVariants} 
+      >
+        <div className="footer-container">
+          <div className="logo">LearnAI</div>
+          <div className="las">
+            <div className="links">
+              <a href="#" className="footer-link">Contact</a>
+              <a href="#" className="footer-link">Blog</a>
+              <a href="#" className="footer-link">Information</a>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2024 LearnAI. All rights reserved.</p>
-      </div>
-    </footer>
-  </div>
-  
+        <div className="footer-bottom">
+          <p>&copy; 2024 LearnAI. All rights reserved.</p>
+        </div>
+      </motion.footer>
+    </div>
   );
 };
 

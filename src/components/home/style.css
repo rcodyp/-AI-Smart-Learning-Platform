@@ -53,6 +53,11 @@ html::-webkit-scrollbar {
   height: 90vh;
   width: 100%;
   position: relative;
+  background-image: url(/public/land.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.7;
 }
 
 #overlay {
@@ -106,7 +111,7 @@ html::-webkit-scrollbar {
   width: 100%;
   position: absolute;
   top: 50%;
-  left: -100%;
+  left: 50%;
   transform: translate(-50%, -50%);
   color: white;
   text-align: center;
@@ -115,15 +120,6 @@ html::-webkit-scrollbar {
   animation: slide-in 3s ease-in-out forwards;
 }
 
-/* Keyframes to define the sliding from left */
-@keyframes slide-in {
-  0% {
-    left: -100%; /* Off the screen */
-  }
-  100% {
-    left: 50%; /* Final position */
-  }
-}
 
 video {
   position: absolute;

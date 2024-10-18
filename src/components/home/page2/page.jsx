@@ -1,26 +1,55 @@
 import React from 'react';
-import '../style.css'; // Optional: Create a CSS file for styling
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-gsap.registerPlugin(ScrollTrigger);
-const Page2 = () => {
+import '../style.css'; 
+import { motion } from 'framer-motion';
 
+const Page2 = () => {
   return (
     <div id='page2'>
       <video autoPlay muted loop>
-                <source src="/earthBg.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-            </video>
+        <source src="/earthBg.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
 
-            <div id="center">
-                <div id='joinDiv'>Join Us</div>
-                <div>Revolutionize</div>
-                <div>Education</div>
-                <div>With AI</div>
-            </div>
+      <div id="center">
+        <motion.div
+          id='joinDiv'
+          initial={{ opacity: 0, x: -200 }} 
+          whileInView={{ opacity: 1, x: 0 }} 
+          transition={{ duration: 1 }} 
+          viewport={{ once: true }} 
+        >
+          Join Us
+        </motion.div>
+        <motion.div
+          className="text-item"
+          initial={{ opacity: 0, x: -200 }}
+          whileInView={{ opacity: 1, x: 0 }} 
+          transition={{ duration: 1, delay: 0.2 }} 
+          viewport={{ once: true }} 
+        >
+          Revolutionize
+        </motion.div>
+        <motion.div
+          className="text-item"
+          initial={{ opacity: 0, x: -200 }} 
+          whileInView={{ opacity: 1, x: 0 }} 
+          transition={{ duration: 1, delay: 0.4 }} 
+          viewport={{ once: true }} 
+        >
+          Education
+        </motion.div>
+        <motion.div
+          className="text-item"
+          initial={{ opacity: 0, x: -200 }} 
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1, delay: 0.6 }} 
+          viewport={{ once: true }} 
+        >
+          With AI
+        </motion.div>
+      </div>
     </div>
   );
 };
-
 
 export default Page2;
