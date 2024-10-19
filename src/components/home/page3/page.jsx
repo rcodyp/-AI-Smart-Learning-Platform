@@ -1,6 +1,6 @@
 import React from "react";
-import "../style.css"; 
-import { motion } from 'framer-motion';
+import "../style.css";
+import { motion } from "framer-motion";
 
 const Page3 = () => {
   const containerVariants = {
@@ -8,30 +8,52 @@ const Page3 = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.3, 
+        staggerChildren: 0.3, // Staggering the appearance of children elements
       },
     },
   };
 
   const childVariants = {
-    hidden: { opacity: 0, y: 20 }, 
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeInOut" } }, 
+    hidden: { opacity: 0, y: 20 }, // Initial state with slight downward offset
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, ease: "easeInOut" }, // Smooth transition with easing
+    },
+  };
+
+  
+
+  // Underline animation when the section is visible
+  const underlineVariants = {
+    hidden: { width: "0" }, // Initial width of 0
+    visible: {
+      width: "50vw", // Expanding width to 50vw
+      transition: { duration: 1, ease: "easeInOut" }, // Smooth easing
+    },
   };
 
   return (
-    <motion.div 
+    <motion.div
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
-      variants={containerVariants} 
+      variants={containerVariants}
       id="page3"
     >
       <div id="page3-title">
         <h2>Level up</h2>
-        <div className="underline"></div>
+        <motion.div
+          className="underline"
+          variants={underlineVariants} 
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+        ></motion.div>
       </div>
       <div id="page3-container">
         <div className="container">
+          {/* Web Development Section */}
           <motion.div id="part1" variants={childVariants}>
             <img
               className="image"
@@ -50,6 +72,8 @@ const Page3 = () => {
               </div>
             </div>
           </motion.div>
+
+          {/* Cyber Security Section */}
           <motion.div id="part2" variants={childVariants}>
             <img
               className="image"

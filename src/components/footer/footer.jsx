@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import './footer.css'; 
+import { FaFacebookF, FaTwitter, FaLinkedinIn, FaInstagram } from 'react-icons/fa'; 
 
 const Footer = () => {
  
@@ -28,6 +29,12 @@ const Footer = () => {
               <a href="#" className="footer-link">Contact</a>
               <a href="#" className="footer-link">Blog</a>
               <a href="#" className="footer-link">Information</a>
+            </div>
+            <div className="social-icons">
+              <a href="#" className="icon"><FaFacebookF /></a>
+              <a href="#" className="icon"><FaTwitter /></a>
+              <a href="#" className="icon"><FaLinkedinIn /></a>
+              <a href="#" className="icon"><FaInstagram /></a>
             </div>
           </div>
         </div>

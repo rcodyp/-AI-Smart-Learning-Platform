@@ -47,21 +47,21 @@
 
 #gs{
   border-radius: 10px;
-  background-color: #ffffff;
+  background-color: #fa9a00;
   padding: 10px 15px;
   transition: color 0.3s, background-color 0.3s;
-  color: black;  
+  /* color: #ffff;   */
 }
 
 #gs a{
   text-transform: uppercase; 
-  color: black;
+  color: #ffff;  
   font-size: 1.2vw; 
   text-decoration: none;
   font-family: monument;
 }
 
 #gs:hover{
-  background-color: #ffffffc4;
+  background-color: #fa9a00df;
   color: black; 
 }
