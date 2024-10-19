@@ -31,7 +31,7 @@
   gap: 4vw; 
 }
 
-#nav a {
+#ab {
   text-transform: uppercase; 
   font-size: 1.2vw; 
   color: white; 
@@ -40,20 +40,28 @@
   transition: color 0.3s, background-color 0.3s; 
 }
 
-#nav div a:first-child {
-  border-radius: 10px;
-  background-color: #ffffff;
-  color: black;
-  text-transform: uppercase; 
-  font-size: 1.2vw; 
-  text-decoration: none; 
-  padding: 10px 15px;
-  transition: color 0.3s, background-color 0.3s; 
-}
 
-#nav a:hover {
+#ab:hover {
   color: #ffffffa2; 
 }
-#nav a:first-child:hover {
-  background-color: #ffffffc4; 
+
+#gs{
+  border-radius: 10px;
+  background-color: #ffffff;
+  padding: 10px 15px;
+  transition: color 0.3s, background-color 0.3s;
+  color: black;  
+}
+
+#gs a{
+  text-transform: uppercase; 
+  color: black;
+  font-size: 1.2vw; 
+  text-decoration: none;
+  font-family: monument;
+}
+
+#gs:hover{
+  background-color: #ffffffc4;
+  color: black; 
 }
