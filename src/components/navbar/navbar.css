@@ -1,3 +1,7 @@
+@font-face {
+  font-family: monument;
+  src: url(.../public/MonumentExtended-Regular.otf);
+}
 #nav {
   font-family: monument, sans-serif;
   letter-spacing: 2px;
