@@ -18,6 +18,15 @@ const Page5 = () => {
     visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeInOut" } }, 
   };
 
+   // Underline animation when the section is visible
+   const underlineVariants = {
+    hidden: { width: "0" }, // Initial width of 0
+    visible: {
+      width: "100%", // Expanding width to 50vw
+      transition: { duration: 1, ease: "easeInOut" }, // Smooth easing
+    },
+  };
+  
   return (
     <motion.div
       initial="hidden"
@@ -28,7 +37,13 @@ const Page5 = () => {
     >
       <div id="about-section">
         <motion.h1 variants={childVariants}>About Our Platform</motion.h1>
-        <motion.div className="underline" variants={childVariants}></motion.div>
+        <motion.div
+          className="underline"
+          variants={underlineVariants} 
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.5 }}
+        ></motion.div>
         <motion.div id="about-discription" variants={childVariants}>
           <p>
             At LearnAI, our mission is to empower students of all levels to

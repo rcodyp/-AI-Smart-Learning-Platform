@@ -6,15 +6,15 @@ const Navbar = () => {
   // Define animation variants for the navbar
   const navVariants = {
     hidden: { opacity: 0, y: -20 }, // Initial state (invisible and slightly moved up)
-    visible: { 
+    visible: {
       opacity: 1, // Fully visible
       y: 0, // Normal position
-      transition: { duration: 1, ease: "easeInOut" } // Animation details
+      transition: { duration: 1, ease: "easeInOut" }, // Animation details
     },
   };
 
   return (
-    <motion.div 
+    <motion.div
       id="nav"
       initial="hidden" // Set initial state
       animate="visible" // Animate to the visible state
@@ -22,8 +22,11 @@ const Navbar = () => {
     >
       <div className="nav-con"></div>
       <div>
-        <a href="/" className="nav-link">Get Started</a>
-        <a href="/about" className="nav-link">About</a>
+        <motion.button id="gs" whileTap={{ scale: 0.85 }}>
+          <a className="nav-link" href="#">Get Started</a></motion.button>
+        <a id="ab" href="/about" className="nav-link">
+          About
+        </a>
       </div>
     </motion.div>
   );

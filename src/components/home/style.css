@@ -1,3 +1,8 @@
+@font-face {
+  font-family: monument;
+  src: url(.../public/MonumentExtended-Regular.otf);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -9,7 +14,7 @@ body {
   color: white;
   height: 100%;
   width: 100%;
-  background-color: black;
+  background-color: #000110;
 }
 
 html::-webkit-scrollbar {
@@ -36,7 +41,7 @@ html::-webkit-scrollbar {
 #page1 {
   width: 100%;
   height: 100%;
-  background-color: black;
+  background-color: #000110;
   position: relative;
   margin-bottom: 5vw;
 }
@@ -47,7 +52,6 @@ html::-webkit-scrollbar {
   object-fit: cover;
   filter: brightness(70%);
 }
-
 
 #content {
   height: 90vh;
@@ -117,9 +121,7 @@ html::-webkit-scrollbar {
   text-align: center;
   font-size: 2rem;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-  animation: slide-in 3s ease-in-out forwards;
 }
-
 
 video {
   position: absolute;
@@ -149,46 +151,60 @@ video {
   text-align: end;
   padding-right: 6vw;
 }
-#page3{
+
+#page3 {
   margin-top: 3vw;
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #000110;
+  color: white;
 }
 
-#page3-title{
-  width: 70%;
+#page3-title {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 3vw;
   position: relative;
-  left: 30%;
-  padding: 0vw 2vw;
+  padding: 0 2vw;
 }
-#page3-title>.underline{
-  margin-bottom: 0.9vw;
+
+#page3-title > .underline {
+  height: 0.3vw;
+  background-color: #FFA500;
+  margin: 0.5vw auto;
 }
-#page3-title h2{
+
+#page3-title h2 {
   text-transform: uppercase;
-  font-size: 5vw;
-  font-family: monument;
+  font-size: 4.5vw;
+  font-family: "Monument", sans-serif;
   font-weight: 500;
+  letter-spacing: 0.1vw;
 }
+
 #page3-container,
 #page4 {
   width: 100%;
-  height: 100%;
-  background-color: black;
-  position: relative;
+  height: auto;
   display: flex;
+  justify-content: space-around;
   align-items: center;
-  justify-content: center;
-  overflow: hidden;
+  flex-wrap: wrap;
+  padding: 0 5vw;
 }
 
 .container {
   padding: 5vw 5vw;
-  width: 100vw;
   height: 100vh;
+  width: 100%;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  gap: 2vw;
+  flex-wrap: wrap;
 }
 
 #part1,
@@ -196,12 +212,12 @@ video {
   width: 55%;
   height: 100%;
   position: relative;
-  background-color: #dbdbdb;
-  color: black;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #008080; 
+  color: white; 
+  border-radius: 15px;
   overflow: hidden;
   transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
 }
 
 #part2,
@@ -209,9 +225,9 @@ video {
   width: 35%;
   height: 100%;
   position: relative;
-  background-color: #dbdbdb;
+  background-color: #92c6f8; 
   color: black;
-  border-radius: 10px;
+  border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   overflow: hidden;
   transition: transform 0.3s, box-shadow 0.3s;
@@ -221,19 +237,21 @@ video {
 #part2:hover,
 #part3:hover,
 #part4:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.233);
+  box-shadow: 0 8px 16px #FF9A76; /* Lighter coral for hover effect */
 }
 
 .title {
-  font-family: monument;
+  font-family: "Monument", sans-serif;
   font-size: 2vw;
   position: absolute;
-  bottom: 15%;
+  bottom: 10%;
   left: 50%;
   transform: translateX(-50%);
+  color: white; 
   width: fit-content;
   text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.1vw;
 }
 
 .about {
@@ -241,15 +259,34 @@ video {
   position: absolute;
   bottom: 0;
   padding: 1vw;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  text-align: center;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+#part1:hover .title,
+#part2:hover .title,
+#part3:hover .title,
+#part4:hover .title {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+#part1:hover .about,
+#part2:hover .about,
+#part3:hover .about,
+#part4:hover .about {
+  transform: translateY(0);
 }
 
 .image {
   width: 100%;
-  height: 80%;
-  max-height: 70%;
+  height: 75%;
   object-fit: cover;
-  border-radius: 10px 10px 0 0;
-  transition: transform 0.3s;
+  object-position: center;
+  border-radius: 15px 15px 0 0;
+  transition: transform 0.3s ease;
 }
 
 #page5 {
@@ -267,11 +304,15 @@ video {
 }
 
 #about-section h1 {
-  font-size: 5vw;
+  color: #ff975b;
+  font-size: 4vw;
+  text-transform: uppercase;
+  font-family: 'monument';
+  font-weight: 500;
 }
 .underline {
   height: 0.2vw;
-  background-color: #fff;
+  background-color: #ffc66a;
   margin-top: 2vw;
   margin-bottom: 2vw;
 }
